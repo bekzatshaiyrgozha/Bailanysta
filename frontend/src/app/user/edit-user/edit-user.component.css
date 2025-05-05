@@ -1,13 +1,211 @@
-.mat-mdc-dialog-container .mdc-dialog__surface{
-    padding: 0;
+/* Profile Edit Form Container */
+
+.profile-edit-form-container {
+    max-width: 100%;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    /* Soft and elegant gradient background */
+    padding: 60px;
+    border-radius: 25px;
+    /* Larger rounded corners */
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.15);
+    /* Strong shadow for a floating effect */
     overflow: hidden;
+    transition: all 0.3s ease-in-out;
 }
 
-.cdk-overlay-pane.mat-mdc-dialog-panel{
-    overflow: hidden;
+
+/* Hover effect for form container */
+
+.profile-edit-form-container:hover {
+    box-shadow: 0px 25px 70px rgba(0, 0, 0, 0.2);
+    /* Shadow gets deeper on hover */
+    transform: translateY(-5px);
+    /* Subtle lift effect */
 }
 
-form{
-    overflow: hidden;
-    padding: 20px;
+
+/* Title styling */
+
+.profile-edit-form h2 {
+    font-size: 34px;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 35px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    /* Wider letter spacing for a more refined look */
+}
+
+
+/* Form Field Styling */
+
+.mat-form-field {
+    width: 100%;
+    margin-bottom: 30px;
+    /* Increased spacing between fields */
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Label styles */
+
+.mat-form-field .mat-label {
+    color: #3498db;
+    /* Soft blue label color */
+    font-weight: 500;
+    font-size: 20px;
+    /* Larger label text */
+    transition: color 0.3s ease;
+}
+
+
+/* Input field styles */
+
+.mat-form-field input {
+    font-size: 18px;
+    padding: 16px 24px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    /* Soft shadow for depth */
+}
+
+
+/* Focus effect for input fields */
+
+.mat-form-field input:focus {
+    border-color: #3498db;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(52, 152, 219, 0.2);
+    /* Glow effect */
+}
+
+
+/* Button Container Styles */
+
+.button-container {
+    display: flex;
+    gap: 35px;
+    justify-content: space-between;
+    margin-top: 35px;
+    /* Increased spacing to balance layout */
+}
+
+
+/* Cancel and Update Button Styles */
+
+.cancel-btn,
+.update-btn {
+    width: 48%;
+    padding: 18px 28px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+
+/* Cancel button styles */
+
+.cancel-btn {
+    background-color: #f0f1f6;
+    color: #333;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Hover effect for cancel button */
+
+.cancel-btn:hover {
+    background-color: #ddd;
+    transform: translateY(-4px);
+    /* Lifts the button on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    /* Increased shadow on hover */
+}
+
+
+/* Update button styles */
+
+.update-btn {
+    background-color: #3498db;
+    /* Main button color */
+    color: white;
+    border: none;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+}
+
+
+/* Disabled Update button */
+
+.update-btn:disabled {
+    background-color: #c1c1c1;
+    cursor: not-allowed;
+}
+
+
+/* Hover effect for update button */
+
+.update-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-4px);
+    /* Lift effect */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    /* Stronger shadow on hover */
+}
+
+
+/* Focus effect for update button */
+
+.update-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.4);
+    /* Blue outline */
+}
+
+
+/* Additional Styling for File Upload Buttons */
+
+.file-upload-buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* File upload button styling */
+
+.file-upload-buttons button {
+    background-color: #2ecc71;
+    /* Green color for file upload */
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 14px 30px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Hover effect for file upload button */
+
+.file-upload-buttons button:hover {
+    background-color: #27ae60;
+    transform: translateY(-3px);
+    /* Slight lift on hover */
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+    /* Deeper shadow */
+    cursor: pointer;
 }

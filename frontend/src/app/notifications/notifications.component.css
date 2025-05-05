@@ -3,59 +3,81 @@
 .container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-    max-width: 500px;
+    gap: 30px;
+    padding: 35px;
+    max-width: 650px;
     margin: 0 auto;
+    background-color: #eef2f7;
+    /* Very light background for the container */
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+    /* Deep shadow for depth */
+    transition: all 0.3s ease-in-out;
+}
+
+.container:hover {
+    box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.2);
+    /* Stronger shadow on hover */
 }
 
 
 /* Notification card styling */
 
 .notification-card {
-    background-color: #b0b5ce;
-    /* White background */
+    background: linear-gradient(145deg, #ffffff, #f0f4f8);
+    /* Subtle gradient for the background */
     color: #333;
-    /* Dark text for readability */
-    border-radius: 12px;
-    padding: 15px;
+    border-radius: 18px;
+    padding: 20px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid #3498db;
+    /* Blue accent color for emphasis */
+    border-top: 3px solid #8e44ad;
+    /* Purple accent color for modern look */
 }
 
 .notification-card:hover {
-    transform: translateY(-5px);
-    /* Slight lift effect on hover */
-    background-color: #f9f9f9;
-    /* Light grey background on hover */
+    transform: translateY(-8px);
+    /* Lift effect */
+    background: linear-gradient(145deg, #f0f4f8, #ffffff);
+    /* Reverse gradient on hover */
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.15);
+    /* Larger shadow on hover */
 }
 
 
 /* Text inside notification */
 
 .notification-text {
-    font-size: 14px;
-    color: #555;
-    max-width: 350px;
+    font-size: 16px;
+    color: #444;
+    max-width: 400px;
+    line-height: 1.7;
+    word-wrap: break-word;
+    font-family: 'Roboto', sans-serif;
 }
 
 .notification-text strong {
-    color: #263789;
-    /* Blue color for username */
+    color: #3498db;
+    /* Blue color for important user text */
+    font-weight: bold;
 }
 
 .notification-text em {
     font-style: italic;
+    color: #7f8c8d;
+    /* Muted gray color for italicized text */
 }
 
 .notification-time {
-    font-size: 12px;
-    color: #888;
-    /* Light grey for time */
+    font-size: 13px;
+    color: #aaa;
     margin-left: 10px;
+    font-style: italic;
 }
 
 
@@ -64,32 +86,82 @@
 .notification-action {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    justify-content: flex-start;
+    gap: 15px;
 }
 
 .notification-action img {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     object-fit: cover;
     border: 2px solid #ddd;
-    /* Light border around image */
+    transition: all 0.3s ease;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for images */
+}
+
+.notification-action img:hover {
+    border-color: #3498db;
+    /* Blue border on hover */
+    transform: scale(1.1);
+    /* Slight zoom effect */
 }
 
 .profile-btn {
     background-color: #3498db;
     /* Blue button */
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 600;
     border: none;
-    padding: 8px 20px;
-    border-radius: 5px;
+    padding: 12px 28px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+    /* Shadow for the button */
 }
 
 .profile-btn:hover {
     background-color: #2980b9;
     /* Darker blue on hover */
+    transform: translateY(-3px);
+    /* Lift effect on hover */
+}
+
+.profile-btn:active {
+    transform: translateY(2px);
+    /* "Press" effect */
+}
+
+
+/* Add some padding and spacing for smoother transitions */
+
+.notification-card {
+    padding: 20px 30px;
+}
+
+.notification-text strong {
+    font-size: 17px;
+}
+
+.notification-action img {
+    width: 55px;
+    height: 55px;
+}
+
+
+/* Enhanced focus effect for accessibility */
+
+.profile-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.4);
+    /* Subtle blue outline */
+}
+
+.notification-card:focus-within {
+    background: linear-gradient(145deg, #f0f4f8, #ffffff);
+    /* Focus effect for card */
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
 }

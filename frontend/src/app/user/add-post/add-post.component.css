@@ -1,66 +1,39 @@
-.post-image {
-    display: block;
-    margin: 1rem auto;
-    width: 200px;
-    height: 200px;
-}
-
-.post-image img {
-    width: 100%;
-}
-
-.profile-btn {
-    border: none;
-    background-color: #180c5f;
-    color: #fff;
-    border-radius: 10px;
-    margin-left: 20px;
-    font-size: 20px;
-    font-family: 'Montserrat';
-    padding: 12px 30px;
-    transition: all .3s;
-}
-
-.profile-btn:disabled {
-    background-color: #221e84;
-}
-
 .create-post-wrapper {
-    max-width: 700px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: #fff7f2;
-    border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-}
-
-.post-image {
-    display: block;
-    margin: 1rem auto;
-    width: 180px;
-    height: 180px;
-    overflow: hidden;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background: linear-gradient(145deg, #e2e2e2, #f9f9f9);
     border-radius: 15px;
-    background-color: #f2f2f2;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
 }
 
-.post-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.create-post-wrapper h2 {
+    font-size: 28px;
+    color: #1e1679;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
 }
 
 .profile-btn {
-    border: none;
     background-color: #1e1679;
     color: #fff;
-    border-radius: 10px;
     font-size: 18px;
-    font-family: 'Montserrat';
-    padding: 10px 26px;
-    margin: 10px 0;
-    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    padding: 15px 40px;
+    border-radius: 12px;
+    border: none;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    text-transform: uppercase;
 }
 
 .profile-btn:hover {
@@ -70,17 +43,79 @@
 
 .profile-btn:disabled {
     background-color: #2a1f8d;
+    cursor: not-allowed;
+}
+
+.post-image {
+    display: block;
+    margin: 20px auto;
+    width: 220px;
+    height: 220px;
+    border-radius: 15px;
+    background-color: #e0e0e0;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.file-upload-btn {
+    display: block;
+    margin: 20px auto;
+    background-color: #fff;
+    color: #1e1679;
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: 1px solid #1e1679;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.file-upload-btn:hover {
+    background-color: #f2f2f2;
+    transform: translateY(-2px);
 }
 
 mat-form-field.w-100 {
     width: 100%;
+    margin-bottom: 25px;
 }
 
 textarea.mat-input-element {
-    min-height: 120px;
+    font-size: 16px;
     border-radius: 12px;
-    padding: 12px;
-    font-family: 'Montserrat';
+    padding: 16px;
+    border: 2px solid #ddd;
+    /* Adding a border */
+    background-color: #f9f9f9;
+    font-family: 'Montserrat', sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow for extra depth */
+}
+
+textarea.mat-input-element:focus {
+    border-color: #1e1679;
+    /* Change border color on focus */
+    outline: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Slight shadow on focus */
+}
+
+textarea.mat-input-element::placeholder {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #aaa;
+}
+
+textarea.mat-input-element:focus::placeholder {
+    color: #1e1679;
+    /* Change placeholder color on focus */
 }
 
 .ai-post {
@@ -94,7 +129,7 @@ textarea.mat-input-element {
     flex: 1;
     padding: 10px 16px;
     font-size: 14px;
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
     border-radius: 10px;
     border: 1px solid #2b1569;
     outline: none;
@@ -103,7 +138,7 @@ textarea.mat-input-element {
 .ai-post button {
     background-color: #111860;
     color: white;
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
     padding: 10px 20px;
     border-radius: 10px;
     border: none;

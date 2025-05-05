@@ -1,57 +1,131 @@
+/* Post Card Styling */
+
 .post-card {
     display: block;
-    margin: 1rem auto;
+    margin: 2rem auto;
     width: 80%;
-    padding: 16px 16px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    /* Soft gradient background */
+    border-radius: 20px;
+    /* Rounded corners for a softer look */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    /* Deeper shadow for floating effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
+/* Hover effect for post card */
+
+.post-card:hover {
+    transform: translateY(-10px);
+    /* Card lifts up slightly on hover */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    /* Stronger shadow */
+}
+
+
+/* Image Styling */
 
 img.mat-mdc-card-image.mdc-card__media {
     width: 100%;
+    border-radius: 15px;
+    /* Smooth corners for images */
 }
+
+
+/* Profile Button Styling */
 
 .profile-btn {
     border: none;
-    background-color: #141178;
+    background-color: #201079;
     color: #fff;
-    border-radius: 10px;
-    margin-left: 20px;
-    font-size: 20px;
-    font-family: 'Montserrat';
-    padding: 12px 30px;
+    border-radius: 12px;
+    padding: 14px 36px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    /* Soft shadow effect */
 }
+
+
+/* Hover effect for profile button */
+
+.profile-btn:hover {
+    background-color: #191f79;
+    transform: translateY(-4px);
+    /* Lift effect */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    /* Deepened shadow */
+}
+
+
+/* Edit Button Styling */
 
 .edit-btn {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     background-color: transparent;
     color: #1c1a73;
+    font-size: 16px;
     text-decoration: underline;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
 }
 
+
+/* Card Header Styling */
+
 .mat-mdc-card-header {
-    justify-content: end;
+    display: flex;
+    justify-content: flex-end;
+    /* Align header content to the right */
     padding: 0;
 }
+
+
+/* Card Content Styling */
 
 .mat-mdc-card-content {
     text-align: left;
+    margin-top: 25px;
+    font-size: 16px;
+    color: #555;
+}
+
+
+/* Card Actions Styling */
+
+.mat-mdc-card-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
     margin-top: 20px;
 }
 
-.mat-mdc-card-actions-align-end {
-    justify-content: space-between;
-    padding: 0;
-}
+
+/* Comment Text Styling */
 
 .comment-text {
     margin: 0;
+    font-size: 14px;
+    color: #777;
 }
+
+
+/* Profile Image Styling */
 
 .profile-image {
     overflow: hidden;
     width: 100%;
     margin: 0 auto;
-    height: 481px;
+    height: 480px;
+    border-radius: 15px;
 }
+
+
+/* Image inside profile */
 
 .profile-image img {
     object-fit: cover;
@@ -60,11 +134,29 @@ img.mat-mdc-card-image.mdc-card__media {
     border-radius: 10px;
 }
 
+
+/* Card Styling */
+
 .mat-mdc-card {
-    padding: 20px 80px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, .3);
-    border-radius: 20px
+    padding: 30px 40px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
+/* Hover effect for the card */
+
+.mat-mdc-card:hover {
+    transform: translateY(-5px);
+    /* Lift the card */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    /* Deepened shadow */
+}
+
+
+/* Post Card Background */
 
 .post-card {
     background: var(--card-bg);
@@ -72,4 +164,193 @@ img.mat-mdc-card-image.mdc-card__media {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-bottom: 1.5rem;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* Dark theme for the card */
+
+body.dark-theme .post-card {
+    background: #11125c;
+    color: #ffffff;
+}
+
+
+/* Avatar Styles */
+
+.avatar {
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-right: 20px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    /* Soft shadow around avatar */
+}
+
+
+/* Avatar Image inside */
+
+.avatar img {
+    object-fit: cover;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+
+/* Link styling for profile and content */
+
+a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    color: #3498db;
+}
+
+
+/* Action Button Hover Effects */
+
+.mdc-card__actions p {
+    margin: 0;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+
+/* Post Card Styling */
+
+.index-page {
+    display: block;
+    margin: 0 auto;
+    width: 75%;
+    padding-top: 3rem;
+}
+
+
+/* Flex Layout for User Profile */
+
+::ng-deep .user-profile .row {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 2rem 0;
+}
+
+
+/* Profile Image Flex */
+
+::ng-deep .profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Image Fit and Radius */
+
+::ng-deep .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/* Profile Heading Styling */
+
+::ng-deep .user-profile h2 {
+    font-size: 32px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0.3rem;
+    color: var(--text-color);
+}
+
+
+/* Subheading Styling */
+
+::ng-deep .user-profile h3 {
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+
+/* Profile Bio */
+
+::ng-deep .user-profile p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: var(--text-color);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+
+/* Profile Button Styling */
+
+::ng-deep .profile-btns {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+
+/* Buttons Styling */
+
+::ng-deep .profile-btns .profile-btn:not(:last-child):not([disabled]) {
+    background-color: #ffffff;
+    color: #0b0d47;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    padding: 16px 36px;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Hover effect for buttons */
+
+::ng-deep .profile-btns .profile-btn:not(:last-child):not([disabled]):hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+
+/* Last button style */
+
+::ng-deep .profile-btns .profile-btn:last-child {
+    background-color: #1e1679;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    padding: 16px 36px;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Hover effect for last button */
+
+::ng-deep .profile-btns .profile-btn:last-child:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 }

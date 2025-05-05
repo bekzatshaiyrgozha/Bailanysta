@@ -1,20 +1,58 @@
+/* User Profile Styling */
+
 .user-profile {
     display: block;
     margin: 0 auto;
-    width: 60%;
+    width: 70%;
     text-align: center;
-    padding-top: 3rem;
+    padding-top: 4rem;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    /* Stylish gradient background */
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.15);
+    /* Subtle shadow for a floating effect */
+    transition: all 0.3s ease-in-out;
 }
+
+
+/* Hover effect for user profile container */
+
+.user-profile:hover {
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.2);
+    /* Shadow gets stronger */
+}
+
+
+/* Profile image styling */
 
 .profile-image {
     border-radius: 50%;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2rem;
     overflow: hidden;
+    border: 5px solid #3498db;
+    /* Bold border around the image */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+    transition: all 0.3s ease-in-out;
 }
+
+
+/* Hover effect for profile image */
+
+.profile-image:hover {
+    transform: scale(1.1);
+    /* Image zooms in slightly */
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.2);
+    /* Stronger shadow */
+}
+
+
+/* Profile image content */
 
 .profile-image img {
     object-fit: cover;
@@ -22,84 +60,158 @@
     height: 100%;
 }
 
+
+/* Title h2 */
+
 h2 {
-    font-size: 32px;
-    font-family: 'Montserrat', "Helvetica Neue", sans-serif;
+    font-size: 36px;
+    font-family: 'Poppins', sans-serif;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
+
+/* Subheading h3 */
+
 h3 {
-    font-size: 24px;
+    font-size: 26px;
     color: #6c757d;
+    margin-bottom: 20px;
 }
+
+
+/* Button styling */
 
 .profile-btn {
     border: none;
-    background-color: #371ca1;
+    background-color: #3498db;
+    /* Main button color */
     color: #fff;
-    border-radius: 12px;
+    border-radius: 15px;
     font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
-    padding: 14px 32px;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    padding: 16px 40px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.profile-btns {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
 
-.profile-btns button {
-    margin-left: 0;
-}
+/* Hover effect for profile button */
 
 .profile-btn:hover {
-    background-color: #2123b1;
+    background-color: #2980b9;
+    /* Darker blue on hover */
+    transform: translateY(-4px);
+    /* Button lift effect */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    /* Shadow deepens */
     cursor: pointer;
-    transform: scale(1.05);
 }
+
+
+/* Button container styling */
+
+.profile-btns {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+
+/* Cancel button */
 
 .profile-btns button:first-child {
     background-color: #ffffff;
-    color: #272987;
-    font-family: 'Montserrat', sans-serif;
+    color: #3498db;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
-    padding: 14px 32px;
-    border-radius: 12px;
+    padding: 16px 40px;
+    border-radius: 15px;
     border: none;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-    transition: 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
+/* Hover effect for cancel button */
 
 .profile-btns button:first-child:hover {
-    transform: translateY(-2px);
+    background-color: #f1f1f1;
+    transform: translateY(-4px);
+    /* Lift effect */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    /* Deepened shadow */
     cursor: pointer;
 }
+
+
+/* Update button */
 
 .profile-btns button:last-child {
-    background-color: #201b85;
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
+    background-color: #1e1679;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
-    padding: 14px 32px;
-    border-radius: 12px;
+    padding: 16px 40px;
+    border-radius: 15px;
     border: none;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-    transition: 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+
+/* Hover effect for update button */
+
 .profile-btns button:last-child:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    background-color: #2123b1;
+    transform: translateY(-4px);
+    /* Lift effect */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    /* Strong shadow */
     cursor: pointer;
 }
 
+
+/* Disabled button state */
+
+.profile-btns button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+
+/* File upload buttons styling */
+
 .file-upload-buttons {
-    margin-top: 1rem;
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
+}
+
+
+/* File upload button */
+
+.file-upload-buttons button {
+    background-color: #3411b2;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 14px 30px;
+    border-radius: 15px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Hover effect for file upload button */
+
+.file-upload-buttons button:hover {
+    background-color: #0c0d5f;
+    transform: translateY(-2px);
+    /* Slight lift */
+    cursor: pointer;
 }
