@@ -89,4 +89,4 @@ http://localhost:4200
 
 Теперь вы можете начать использовать приложение!
 
-link: https://youtu.be/vqnQWrbz284?si=sPY6Y0c1OUz0fGN4
+link: https://youtu.be/TobzZ8bxK5Q?si=SjVjP2Z3XanaZ6OP
