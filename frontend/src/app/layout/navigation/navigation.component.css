@@ -1,0 +1,60 @@
+/* Basic styles for header */
+
+.header {
+    background-color: #3338a1;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, .3);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+    height: 85px;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+.logo {
+    width: 138px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.nav-icon {
+    width: 36px;
+    height: 36px;
+}
+
+.nav-btns {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Dark theme styles */
+
+body.dark-theme {
+    background-color: #211260;
+    color: white;
+}
+
+
+/* Important here! */
+
+.dark-theme .header {
+    background-color: #071839 !important;
+    /* Жаңа түс, !important қолданылды */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, .6) !important;
+}
+
+
+/* Smooth transition */
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}

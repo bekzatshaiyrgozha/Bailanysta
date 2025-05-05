@@ -1,0 +1,105 @@
+.user-profile {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
+    padding-top: 3rem;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.profile-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+h2 {
+    font-size: 32px;
+    font-family: 'Montserrat', "Helvetica Neue", sans-serif;
+}
+
+h3 {
+    font-size: 24px;
+    color: #6c757d;
+}
+
+.profile-btn {
+    border: none;
+    background-color: #371ca1;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 14px 32px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-btns {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-btns button {
+    margin-left: 0;
+}
+
+.profile-btn:hover {
+    background-color: #2123b1;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.profile-btns button:first-child {
+    background-color: #ffffff;
+    color: #272987;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    padding: 14px 32px;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    transition: 0.2s ease;
+}
+
+.profile-btns button:first-child:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.profile-btns button:last-child {
+    background-color: #201b85;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    padding: 14px 32px;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    transition: 0.2s ease;
+}
+
+.profile-btns button:last-child:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.file-upload-buttons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}

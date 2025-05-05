@@ -1,0 +1,25 @@
+<div class="header">
+    <div class="container">
+        <a [routerLink]="['/main']" class="logo">
+            <img src="../../../assets/logo.svg" alt="logo">
+        </a>
+        <div *ngIf="isLoggedIn" class="nav-btns d-flex flex-row">
+            <div class="p-2">
+                <a [routerLink]="['/search']"><img class="nav-icon" src="../../../assets/search.svg" alt="header"></a>
+            </div>
+            <div class="p-2">
+                <a [routerLink]="['/notifications']"><img class="nav-icon" src="../../../assets/notification.svg" alt="header"></a>
+            </div>
+            <div class="p-2">
+                <a [routerLink]="['/profile']"><img class="nav-icon" src="../../../assets/user.svg" alt="header"></a>
+            </div>
+            <div class="p-2">
+                <a (click)="logout()"><img class="nav-icon" src="../../../assets/log-out.svg" alt="header"></a>
+            </div>
+
+
+
+            <span class="spacer"></span>
+        </div>
+    </div>
+</div>

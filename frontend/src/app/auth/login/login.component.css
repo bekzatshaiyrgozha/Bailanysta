@@ -1,0 +1,75 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-form {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.input-field {
+    width: 100%;
+    margin-bottom: 20px;
+    color: #200a68;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #131784;
+    color: #fff;
+    border: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button:disabled {
+    background-color: #283ada;
+}
+
+.signup-link {
+    margin-top: 20px;
+}
+
+.signup-link a {
+    color: #2d0f89;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+.mat-form-field.mat-form-field-invalid .mat-form-field-ripple {
+    background-color: #260c5e;
+    /* Қызыл түсті көрсеткіш */
+}
+
+.mat-form-field.mat-form-field-invalid .mat-label {
+    color: #161057;
+    /* Қызыл түсті таңба */
+}
+
+.mat-form-field.mat-form-field-invalid input {
+    border-color: #291f69;
+    /* Қызыл түсті шекара */
+}

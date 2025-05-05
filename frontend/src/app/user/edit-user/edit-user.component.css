@@ -1,0 +1,13 @@
+.mat-mdc-dialog-container .mdc-dialog__surface{
+    padding: 0;
+    overflow: hidden;
+}
+
+.cdk-overlay-pane.mat-mdc-dialog-panel{
+    overflow: hidden;
+}
+
+form{
+    overflow: hidden;
+    padding: 20px;
+}

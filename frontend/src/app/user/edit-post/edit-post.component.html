@@ -1,0 +1,35 @@
+<div>
+
+
+  <form [formGroup]="postEditForm">
+    <h2>Create Post</h2>
+
+    <img class="post-image" [src]=" previewImgURL || data.post.image || 'https://www.missingdogsuk.co.uk/wp-content/plugins/wp-job-manager-resumes/assets/images/candidate.png'" alt="post image">
+
+    <input type="file"
+           style="display: none"
+           #fileInput
+           (change)="onFileSelected($event)">
+
+    <button mat-button (click)="fileInput.click()">Pick File</button>
+
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput
+             formControlName="body">
+    </mat-form-field>
+
+
+    <div class="row">
+      <button (click)="closeDialog()" class="w-50"
+              mat-button mat-dialog-close disableRipple>
+        Cancel
+      </button>
+      <button color="primary" class="w-50" [disabled]="postEditForm.invalid" (click)="submit()" mat-button disableRipple>
+        Update
+      </button>
+    </div>
+
+  </form>
+</div>
+

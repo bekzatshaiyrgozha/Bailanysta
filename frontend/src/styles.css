@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { 
+  height: 100%;
+  outline: none; 
+}
+body { margin: 0; }
+*{
+  font-family: 'Montserrat', "Helvetica Neue", sans-serif; 
+}
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label, .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+  transform: translateY(-0.8em) scale(0.75);
+  width: 133.3333333333%;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-outline-gap {
+  border-top-color: currentColor !important;
+}
+
+body{
+  background-color: #F7EEE8;
+  padding-top: 110px;
+}
+
+.index-page{
+  padding-bottom: 20px;
+}
+
+:root {
+  --bg-color: #fff7f2;
+  --text-color: #000;
+  --card-bg: #ffffff;
+  --header-bg: #ffffff;
+}
+
+body.dark-theme {
+  --bg-color: #2d2d2d;
+  --text-color: #ffffff;
+  --card-bg: #93908e;
+  --header-bg: #2c2c2c;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.create-post-wrapper {
+  background: var(--card-bg);
+  color: var(--text-color);
+}

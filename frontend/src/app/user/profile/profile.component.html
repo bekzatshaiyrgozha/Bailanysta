@@ -1,0 +1,31 @@
+<div *ngIf="isUserDataLoaded" class="user-profile">
+
+    <div class="row" style="padding-top: 2rem;">
+        <div class="col">
+            <div class="profile-image">
+                <img [src]="user.profile_pic || previewImgURL || 'https://www.missingdogsuk.co.uk/wp-content/plugins/wp-job-manager-resumes/assets/images/user-profile.png'" alt="user image">
+            </div>
+
+            <input type="file" style="display: none" #fileInput (change)="onFileSelected($event)">
+            <div class="file-upload-buttons">
+                <button mat-button (click)="fileInput.click()">Choose File</button>
+                <button mat-button *ngIf="selectedFile" (click)="onUpload()">Upload</button>
+            </div>
+        </div>
+
+        <div class="col" style="text-align: left; margin-top: 20px;">
+            <h2>{{user.username}}</h2>
+            <h3 style="font-style: italic">{{user.first_name}} {{user.last_name}}</h3>
+            <p>{{user.bio}}</p>
+            <div class="profile-btns">
+                <button class="profile-btn" (click)="openEditDialog()">Edit Info</button>
+                <button class="profile-btn" (click)="openFriendDialog()">Friend List</button>
+            </div>
+        </div>
+
+        <mat-divider style="margin: 2rem 0;"></mat-divider>
+
+        <router-outlet></router-outlet>
+    </div>
+
+</div>

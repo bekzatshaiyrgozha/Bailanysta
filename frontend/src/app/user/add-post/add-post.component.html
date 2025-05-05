@@ -1,0 +1,33 @@
+<div class="create-post-wrapper">
+    <div style="text-align: right">
+        <button class="profile-btn" [routerLink]="['/profile']">My Posts</button>
+    </div>
+
+    <h2>Create Post</h2>
+
+    <form [formGroup]="postForm">
+
+        <div class="post-image">
+            <img [src]="previewImgURL ">
+        </div>
+
+        <input type="file" style="display: none" #fileInput (change)="onFileSelected($event)">
+
+        <button mat-button (click)="fileInput.click()">Choice file </button>
+
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="body" rows="5"></textarea>
+        </mat-form-field>
+
+        <div style="text-align: right">
+            <button class="profile-btn" [disabled]="postForm.invalid" (click)="submit()">
+        Create Post
+      </button>
+        </div>
+
+    </form>
+
+
+
+</div>

@@ -1,0 +1,90 @@
+/* Search input стилі */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+
+/* Ортада тұратын input */
+
+input[type="text"] {
+    border: none;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .25);
+    border-radius: 10px;
+    padding: 12px 20px;
+    width: 50%;
+    /* input өрісінің ені */
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+
+/* Пайдаланушының іздеу нәтижесі (li элементтері) */
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    width: 50%;
+    /* Сілтемелерді осылай орталаңыз */
+}
+
+
+/* Әрбір элементке арналған стильдер */
+
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+/* li элементін басқанда түс өзгерту */
+
+li:hover {
+    background-color: #f2f2f2;
+}
+
+
+/* Аватардың стилі */
+
+.avatar {
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.avatar img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Пайдаланушының ақпаратын көрсету */
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+h3.name {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0 0;
+}

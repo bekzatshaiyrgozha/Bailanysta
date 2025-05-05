@@ -1,0 +1,21 @@
+<div class="container">
+    <input type="text" (input)="onSearch(searchInput)" [(ngModel)]="searchInput" placeholder="Search users...">
+    <ul>
+        <li *ngFor="let user of users" [routerLink]="['/users', user.username]">
+            <div class="avatar">
+                <div *ngIf="user.profile_pic == null">
+                    <img src="../../assets/img/profile.jpg" alt="avatar">
+                </div>
+
+                <div *ngIf="user.profile_pic != null">
+                    <img src="{{user.profile_pic}}" alt="avatar">
+                </div>
+            </div>
+
+            <div class="info">
+                <h3 class="name">{{user.username}} </h3>
+                <p>{{user.first_name}} {{user.last_name}} </p>
+            </div>
+        </li>
+    </ul>
+</div>

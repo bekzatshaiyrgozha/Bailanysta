@@ -1,0 +1,55 @@
+<div class="index-page">
+    <div class="search-container">
+        <input type="text" [(ngModel)]="searchQuery" (input)="onSearchChange()" placeholder="Find a post..." class="search-input" />
+    </div>
+
+    <ng-container *ngIf="isUserDataLoaded; else skeletonLoading">
+        <mat-card class="post-card" *ngFor="let post of filteredPosts; let i = index">
+            <h2 [routerLink]="['/users', post.user]">{{post.user}}</h2>
+
+            <div class="image">
+                <img mat-card-image [src]="post.image" alt="post image" />
+            </div>
+
+            <mat-card-content>
+                <p>{{post.body}}</p>
+            </mat-card-content>
+
+            <mat-card-actions class="post-actions">
+                <div class="like-section" (click)="likePost(i)">
+                    <mat-icon [ngClass]="{'liked': post.userLiked.includes(user.username)}">favorite</mat-icon>
+                    <span>Like</span>
+                    <span class="likes-count">{{post.userLiked.length}}</span>
+                </div>
+            </mat-card-actions>
+
+            <hr />
+
+            <div style="text-align: left">
+                <p *ngFor="let comment of post.comments">
+                    <span style="font-weight: 500">{{comment.user}}</span>: {{comment.body}}
+                </p>
+            </div>
+
+            <mat-form-field class="w-100">
+                <mat-label>Leave a comment...</mat-label>
+                <input (keyup.enter)="postComment(message, i)" [(ngModel)]="message" matInput maxlength="128" />
+                <mat-hint align="end" *ngIf="message">{{message.length}} / 128</mat-hint>
+            </mat-form-field>
+        </mat-card>
+    </ng-container>
+
+    <ng-template #skeletonLoading>
+        <mat-card class="post-card skeleton" *ngFor="let item of skeletonArray">
+            <div class="skeleton-title"></div>
+            <div class="skeleton-image"></div>
+            <div class="skeleton-text"></div>
+        </mat-card>
+    </ng-template>
+
+    <div #marker></div>
+
+    <div *ngIf="isLoading && isUserDataLoaded" class="loader-container">
+        <div class="loader"></div>
+    </div>
+</div>

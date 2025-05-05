@@ -1,0 +1,45 @@
+<div *ngIf="isUserPostsLoaded" xmlns="http://www.w3.org/1999/html">
+    <div style="text-align: right">
+        <button class="profile-btn" routerLink="/profile/add">Add Post</button>
+    </div>
+
+    <h2>{{posts.length}} Posts</h2>
+
+    <mat-card class="post-card" *ngFor="let post of posts; let i = index">
+        <mat-card-header style="text-align: left">
+            <button (click)="updatePost(post)" class="profile-btn edit-btn">Edit</button>
+            <div mat-card-avatar class="example-header-image"></div>
+            <!--        <mat-card-title>{{post.title}}</mat-card-title>-->
+            <!--        <mat-card-subtitle>{{post.location}}</mat-card-subtitle>-->
+        </mat-card-header>
+        <div class="profile-image">
+            <img mat-card-image [src]="post.image" alt="post image">
+        </div>
+
+        <mat-card-content>
+            <p>
+                {{post.body}}
+            </p>
+        </mat-card-content>
+
+        <hr>
+
+        <div style="text-align: left">
+            <p class="comment-text" *ngFor="let comment of post.comments; let c = index"><span style="font-weight: 500">{{comment.user}}</span>: {{comment.body}}
+                <button color="accent" mat-button (click)="deleteComment(comment.id, i, c)">
+          <mat-icon color="accent">clear</mat-icon>
+        </button>
+            </p>
+        </div>
+
+        <mat-card-actions align="end">
+            <mat-card-subtitle align="start">Likes: {{post.userLiked.length}}</mat-card-subtitle>
+            <button color="warn" mat-button (click)="removePost(post, i)">
+        <mat-icon color="warn">delete</mat-icon>
+        Remove Post
+      </button>
+        </mat-card-actions>
+
+
+    </mat-card>
+</div>

@@ -1,0 +1,95 @@
+/* Container for notifications */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+
+/* Notification card styling */
+
+.notification-card {
+    background-color: #b0b5ce;
+    /* White background */
+    color: #333;
+    /* Dark text for readability */
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.notification-card:hover {
+    transform: translateY(-5px);
+    /* Slight lift effect on hover */
+    background-color: #f9f9f9;
+    /* Light grey background on hover */
+}
+
+
+/* Text inside notification */
+
+.notification-text {
+    font-size: 14px;
+    color: #555;
+    max-width: 350px;
+}
+
+.notification-text strong {
+    color: #263789;
+    /* Blue color for username */
+}
+
+.notification-text em {
+    font-style: italic;
+}
+
+.notification-time {
+    font-size: 12px;
+    color: #888;
+    /* Light grey for time */
+    margin-left: 10px;
+}
+
+
+/* Notification action section (image and button) */
+
+.notification-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.notification-action img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    /* Light border around image */
+}
+
+.profile-btn {
+    background-color: #3498db;
+    /* Blue button */
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-btn:hover {
+    background-color: #2980b9;
+    /* Darker blue on hover */
+}
