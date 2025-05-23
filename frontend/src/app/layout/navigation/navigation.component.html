@@ -1,0 +1,114 @@
+<!-- Header -->
+<div class="header" *ngIf="isLoggedIn">
+    <div class="container">
+        <div class="menu-btn" (click)="toggleMenu()">
+            <img class="nav-icon" src="../../../assets/menu.svg" alt="menu" />
+        </div>
+        <a [routerLink]="['/main']" class="logo">
+            <img src="../../../assets/logo.svg" alt="logo" />
+        </a>
+    </div>
+</div>
+
+<!-- Sidebar Menu -->
+<div class="side-menu" [ngClass]="{ open: menuOpen }">
+    <div class="logo-right-menu">
+        <img src="../../../assets/logo.svg" alt="Bailanysta" />
+    </div>
+
+    <div *ngIf="menuOpen" class="close-menu-btn" (click)="toggleMenu()">
+        <img class="nav-icon" src="../../../assets/close.svg" alt="close" />
+    </div>
+
+    <ul>
+        <li>
+            <a [routerLink]="['/main']" (click)="closeAllPanels()">
+                <img src="../../../assets/home-page.svg" class="menu-icon" alt="home-page" /> Home
+            </a>
+        </li>
+        <li>
+            <!-- Профильге өткенде меню ашылып, басқалары жабылады -->
+            <a [routerLink]="['/profile']" (click)="
+            menuOpen = true;
+            isNotificationsOpen = false;
+            isSearchOpen = false
+          ">
+                <img src="../../../assets/user.svg" class="menu-icon" alt="profile" /> Profile
+            </a>
+        </li>
+        <li>
+            <!-- Іздеу батырмасы меню жабылмай іздеу панелін ашады/жабады -->
+            <a (click)="toggleSearchPanel()">
+                <img src="../../../assets/search.svg" class="menu-icon" alt="search" /> Search query
+            </a>
+        </li>
+        <li>
+            <!-- Хабарландыру батырмасы меню жабылмай хабарландыру панелін ашады/жабады -->
+            <a (click)="toggleNotifications()">
+                <img src="../../../assets/notification.svg" class="menu-icon" alt="notif" /> Notifications
+            </a>
+        </li>
+
+        <li class="logout">
+            <a (click)="logout()">
+                <img src="../../../assets/log-out.svg" class="menu-icon" alt="logout" /> Get out
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!-- Notifications Panel -->
+<div class="notifications-panel" [ngClass]="{ open: isNotificationsOpen }">
+    <h3>Notifications</h3>
+    <div class="notification-card" *ngFor="let notification of notifications; let i = index">
+        <div class="notification-text">
+            <p>
+                <strong>{{ notification.from_user.username }}</strong> {{ notification.type }}
+                <span *ngIf="notification.type === 'comment'"> your publication: <em>{{ notification.comment_text }}</em> </span>
+                <span *ngIf="notification.type === 'like'"> your publication </span>
+                <span class="notification-time">{{ notification.created | date: 'shortTime' }}</span>
+            </p>
+        </div>
+        <div class="notification-action">
+            <img *ngIf="notification.type === 'like' || notification.type === 'comment'; else acceptButton" [src]="notification.post.image" alt="post image" />
+            <ng-template #acceptButton>
+                <button class="profile-btn" (click)="acceptRequest(notification.from_user.id, i, notification.id)">Accept</button>
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+<!-- Search Panel -->
+<div class="search-panel" [ngClass]="{ open: isSearchOpen }">
+    <div class="search-input-container">
+        <h3>Search query</h3>
+        <div class="search-input-wrapper">
+            <input type="text" (input)="onSearch(searchInput)" [(ngModel)]="searchInput" placeholder="Search users..." class="search-input" />
+
+            <button mat-icon-button *ngIf="searchInput" (click)="clearSearch()" class="clear-btn">
+          <img src="../../../assets/clear.svg" alt="Clear search" />
+        </button>
+
+            <button mat-icon-button *ngIf="!searchInput" class="search-btn">
+          <img src="../../../assets/find.svg" alt="Search" />
+        </button>
+        </div>
+    </div>
+
+    <ul class="search-results">
+        <li *ngFor="let user of users" [routerLink]="['/users', user.username]" class="search-item" (click)="closeAllPanels()">
+            <div class="avatar">
+                <div *ngIf="!user.profile_pic">
+                    <img src="../../assets/img/profile.jpg" alt="avatar" />
+                </div>
+                <div *ngIf="user.profile_pic">
+                    <img [src]="user.profile_pic" alt="avatar" />
+                </div>
+            </div>
+            <div class="info">
+                <h3 class="name">{{ user.username }}</h3>
+                <p>{{ user.first_name }} {{ user.last_name }}</p>
+            </div>
+        </li>
+    </ul>
+</div>

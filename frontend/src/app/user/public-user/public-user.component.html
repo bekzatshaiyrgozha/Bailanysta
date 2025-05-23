@@ -1,0 +1,75 @@
+<div *ngIf="isUserDataLoaded" class="user-profile">
+    <div class="row">
+        <div class="col">
+            <div class="profile-image">
+                <img [src]="user.profile_pic || 'https://www.missingdogsuk.co.uk/wp-content/plugins/wp-job-manager-resumes/assets/images/candidate.png'" alt="user image">
+            </div>
+        </div>
+
+        <div class="col" style="text-align: left;">
+            <h2>{{user.username}}</h2>
+            <h3>{{user.first_name}} {{user.last_name}}</h3>
+            <p>{{user.bio}}</p>
+
+            <div class="profile-btns">
+                <button *ngIf="!friendStatus.is_friend && !friendStatus.friend_request_sent" class="profile-btn1" (click)="friendRequest(user.id)">Add friend</button>
+                <button *ngIf="friendStatus.is_friend" class="profile-btn1" disabled>Already your friend</button>
+                <button *ngIf="friendStatus.friend_request_sent" class="profile-btn1" disabled>Send</button>
+                <button class="profile-btn2" (click)="openFriendDialog()">Friends</button>
+            </div>
+        </div>
+    </div>
+
+    <mat-divider style="margin: 4rem 0;"></mat-divider>
+
+    <div *ngIf="isUserPostsLoaded" class="publics">
+        <h2>{{posts.length}} publications</h2>
+
+        <div class="post-cards">
+            <mat-card class="post-card" *ngFor="let post of posts; let i = index">
+                <div class="image">
+                    <img mat-card-image [src]="post.image" alt="post image">
+                </div>
+
+                <mat-card-content>
+                    <p>{{post.body}}</p>
+                </mat-card-content>
+
+                <!-- Like Section -->
+                <mat-card-actions align="start">
+                    <button mat-button (click)="likePost(post.id, i)">
+              <mat-icon [ngClass]="{'liked': post.userLiked.includes(currentUserName)}">favorite</mat-icon> Like
+            </button>
+                    <p>{{post.userLiked.length}} Likes</p>
+                </mat-card-actions>
+
+                <!-- Comment Section -->
+                <div style="text-align: left;">
+                    <button class="comment-toggle" (click)="toggleComments(i)">
+              <mat-icon>comment</mat-icon> Comments
+            </button>
+                    <div *ngIf="post.showComments">
+                        <div *ngFor="let comment of post.comments">
+                            <p>
+                                <span style="font-weight: 500">{{comment.user}}</span>: {{comment.body}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comment Input -->
+                <mat-form-field class="w-100">
+                    <mat-label>Add a comment...</mat-label>
+                    <input matInput (keyup.enter)="postComment(message, post.id, i)" [(ngModel)]="message" maxlength="128">
+                    <mat-hint align="end" *ngIf="message">{{message.length}} / 128</mat-hint>
+                </mat-form-field>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<ng-template #loading>
+    <div class="container">
+        <p>Loading profile...</p>
+    </div>
+</ng-template>

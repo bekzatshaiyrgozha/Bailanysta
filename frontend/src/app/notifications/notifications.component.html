@@ -1,0 +1,30 @@
+<!-- Notification Button -->
+<div class="notification-btn" (click)="toggleNotifications()">
+    <img src="path/to/notification-icon.svg" alt="Notifications">
+</div>
+
+<!-- Notifications Panel -->
+<div class="notifications-panel" [ngClass]="{'open': isNotificationsOpen}">
+    <div class="notification-card" *ngFor="let notification of notifications; let i = index">
+        <div class="notification-text">
+            <p>
+                <strong>{{notification.from_user.username}}</strong> {{notification.type}}
+                <span *ngIf="notification.type === 'comment'">
+            your post: <em>{{notification.comment_text}}</em>
+          </span>
+                <span *ngIf="notification.type === 'like'">
+            your post
+          </span>
+                <span class="notification-time">at {{notification.created | date: 'shortTime'}}</span>
+            </p>
+        </div>
+
+        <div class="notification-action">
+            <img *ngIf="notification.type === 'like' || notification.type === 'comment'; else acceptButton" [src]="notification.post.image" alt="post image">
+
+            <ng-template #acceptButton>
+                <button class="profile-btn" (click)="acceptRequest(notification.from_user.id, i, notification.id)">Accept</button>
+            </ng-template>
+        </div>
+    </div>
+</div>

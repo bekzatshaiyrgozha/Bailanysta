@@ -1,0 +1,50 @@
+<div class="register-page">
+    <form [formGroup]="registerForm">
+        <div class="register-container">
+            <!-- Logo centered at the top -->
+            <img src="../../../assets/logo.svg" alt="Logo" class="logo">
+        </div>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username">
+            <mat-icon matPrefix>person</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="first_name">
+            <mat-icon matPrefix>person</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="last_name">
+            <mat-icon matPrefix>person</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Email Address</mat-label>
+            <input matInput formControlName="email">
+            <mat-icon matPrefix>email</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password">
+            <mat-icon matPrefix>lock</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Confirm password</mat-label>
+            <input matInput type="password" formControlName="password2">
+            <mat-icon matPrefix>lock</mat-icon>
+        </mat-form-field>
+
+        <p class="question">Already have an account? <a routerLink="/login">Sign in Now!</a></p>
+
+        <button [disabled]="registerForm.invalid" (click)="submit()" mat-raised-button color="primary">
+            Register
+        </button>
+    </form>
+</div>

@@ -1,0 +1,691 @@
+/* Basic styles for header */
+
+.header {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, .1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99;
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Menu button */
+
+.menu-btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 20px;
+    /* Align to left */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: -100px;
+    flex-grow: 1;
+    /* Allow logo to occupy space */
+}
+
+.logo-right-menu {
+    display: flex;
+    margin-left: 1px;
+    margin-top: -44px;
+    /* Жоғары қарай жылжытамыз, оңтайлы мәнді таңдап көріңіз */
+}
+
+.logo-right-menu img {
+    width: 150px;
+    margin-left: 20px;
+}
+
+.logo img {
+    width: 130px;
+    /* Adjust the width of the logo */
+}
+
+.nav-icon {
+    width: 36px;
+    height: 36px;
+}
+
+
+/* Navigation buttons (right side) */
+
+.nav-btns {
+    display: flex;
+    align-items: center;
+    transition: margin-left 0.3s ease;
+}
+
+.nav-btns.menu-open {
+    margin-left: 250px;
+}
+
+
+/* Dark theme styles */
+
+
+/* Light mode styles */
+
+body {
+    background-color: #f8f8f8;
+    /* Light background */
+    color: #333;
+    /* Light text color */
+}
+
+
+/* Dark mode styles */
+
+body.dark-theme {
+    background-color: #2c2f38;
+    /* Dark background */
+    color: white;
+    /* White text color */
+}
+
+
+/* Example: Sidebar in dark mode */
+
+.side-menu {
+    background-color: #333;
+    /* Dark background for sidebar */
+    color: #fff;
+    /* White text for sidebar */
+}
+
+
+/* Any other components you need to adjust can go here */
+
+.dark-theme .header {
+    background-color: #071839 !important;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, .6) !important;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* Sidebar menu */
+
+
+/* Sidebar menu */
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: rgba(255, 255, 255);
+    /* Light transparent background */
+    color: #333;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    padding-top: 60px;
+    /* Space for header */
+    transition: left 0.3s ease;
+    z-index: 100;
+}
+
+
+/* When menu is open */
+
+.side-menu.open {
+    left: 0;
+    width: 280px;
+    /* Show menu when open */
+}
+
+
+/* Close button inside the sidebar (move it to the left side of the sidebar) */
+
+.close-menu-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    /* Adjust top position */
+    left: 230px;
+    /* Adjust left position to be closer to the left edge */
+    z-index: 110;
+    /* Ensure it's above the menu */
+}
+
+.close-menu-btn:hover {
+    background-color: #000000;
+    /* Көлеңке түсі */
+    /* Сәл үлкейту */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    /* Жеңіл көлеңке */
+}
+
+
+/* Optionally, for when the mouse leaves */
+
+.close-menu-btn:active {
+    transform: scale(1);
+    /* Кнопканы басқанда бастапқы жағдайға қайтару */
+}
+
+
+/* Style the close button icon */
+
+.close-menu-btn .nav-icon {
+    width: 36px;
+    height: 36px;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu li {
+    padding: 15px 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease, border 0.3s ease;
+    cursor: pointer;
+}
+
+.side-menu a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    width: 100%;
+}
+
+.side-menu li:first-child {
+    margin-top: 40px;
+    /* Алғашқы элементтің арасын кеңейту */
+}
+
+.menu-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+/* Logo inside the sidebar */
+
+.side-menu .logo {
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.side-menu .logo img {
+    width: 30px;
+    /* Set the logo size */
+    margin-right: 10px;
+}
+
+
+/* Close menu button */
+
+.close-menu-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 1190px;
+    z-index: 110;
+}
+
+.close-menu-btn .nav-icon {
+    width: 36px;
+    height: 36px;
+}
+
+
+/* Menu items */
+
+.side-menu a:hover {
+    background-color: #f0f0f0;
+    /* Highlight on hover */
+}
+
+.side-menu li:hover {
+    background-color: #f0f0f0;
+    /* Light grey background on hover */
+    border-radius: 5px;
+    /* Optional: Rounded corners for the border */
+    border: 2px solid #ccc;
+    /* Subtle border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Optional: Slight shadow to make it pop */
+}
+
+.side-menu .logo-right-menu img {
+    width: 120px;
+    /* Adjust the logo size inside the sidebar */
+    height: auto;
+}
+
+.side-menu .close-menu-btn .nav-icon {
+    width: 36px;
+    height: 36px;
+}
+
+.side-menu li.logout {
+    margin-top: 420px;
+    /* Бұл элементті төменгі жағына жылжытады */
+    padding: 15px 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+/* Егер лог аутты басқа элемент ретінде жібергіңіз келсе, оның арнайы класы болуы мүмкін */
+
+.side-menu a.logout {
+    margin-top: auto;
+}
+
+#dark {
+    cursor: pointer;
+}
+
+
+/* Notifications Panel */
+
+.notifications-panel {
+    position: fixed;
+    top: 0;
+    left: -500px;
+    /* Initially off-screen */
+    width: 500px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 50;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* When notifications are open, slide in from right */
+
+.notifications-panel.open {
+    transform: translateX(781px);
+    z-index: 99;
+    /* Slide in */
+    border-top-right-radius: 20px;
+    /* Adjust the radius for the top-right corner */
+    border-bottom-right-radius: 20px;
+}
+
+
+/* Notification card styles */
+
+.notification-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.notification-card:hover {
+    background-color: #e6e6e6;
+    /* Hover effect for card */
+}
+
+
+/* Notification text */
+
+.notification-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5px;
+    font-size: 15px;
+    color: #444;
+    max-width: 300px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* Accept button styling */
+
+.profile-btn {
+    background-color: #000000;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-btn:hover {
+    background-color: #000000;
+}
+
+
+/* Notification button for opening the panel */
+
+.notification-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    cursor: pointer;
+}
+
+
+/* Container for notifications */
+
+
+/* Notification card styling */
+
+.notification-card {
+    /* Subtle gradient for the background */
+    color: #333;
+    border-radius: 18px;
+    display: flex;
+}
+
+.notification-card:hover {
+    background: linear-gradient(145deg, #f2f2f2, #f2f2f2);
+    /* Reverse gradient on hover */
+    /* Larger shadow on hover */
+}
+
+
+/* Text inside notification */
+
+.notification-text strong {
+    color: #000000;
+    /* Blue color for important user text */
+    font-weight: bold;
+}
+
+.notification-text em {
+    font-style: italic;
+    color: #7f8c8d;
+    /* Muted gray color for italicized text */
+}
+
+.notification-time {
+    font-size: 10px;
+    color: #aaa;
+    margin-left: 10px;
+    font-style: italic;
+}
+
+
+/* Notification action section (image and text) */
+
+.notification-action {
+    display: flex;
+    align-items: end;
+    justify-content: flex-start;
+    gap: 10px;
+    /* Adjust gap for better alignment */
+    flex-direction: row-reverse;
+    /* Place image to the right */
+}
+
+
+/* Notification action image */
+
+.notification-action img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    transition: all 0.3s ease;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for images */
+}
+
+
+/* Hover effect for the image */
+
+.notification-action img:hover {
+    border-color: #000000;
+    /* Blue border on hover */
+    transform: scale(1.1);
+    /* Slight zoom effect */
+}
+
+
+/* Button styling inside notification */
+
+.profile-btn {
+    background-color: #3498db;
+    /* Blue button */
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+    /* Shadow for the button */
+}
+
+.profile-btn:hover {
+    background-color: #2980b9;
+    /* Darker blue on hover */
+    transform: translateY(-3px);
+    /* Lift effect on hover */
+}
+
+.profile-btn:active {
+    transform: translateY(2px);
+    /* "Press" effect */
+}
+
+
+/* Add some padding and spacing for smoother transitions */
+
+.notification-card {
+    padding: 20px 30px;
+}
+
+.notification-text strong {
+    font-size: 17px;
+}
+
+.notification-action img {
+    width: 55px;
+    height: 55px;
+}
+
+
+/* Enhanced focus effect for accessibility */
+
+.profile-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.4);
+    /* Subtle blue outline */
+}
+
+.notification-card:focus-within {
+    background: linear-gradient(145deg, #f0f4f8, #ffffff);
+    /* Focus effect for card */
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Search Panel Styles */
+
+.search-panel h3 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.search-panel {
+    position: fixed;
+    top: 0;
+    left: -500px;
+    /* Start off-screen */
+    width: 500px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 99;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* When search panel is open */
+
+.search-panel.open {
+    transform: translateX(782px);
+    border-top-right-radius: 20px;
+    /* Adjust the radius for the top-right corner */
+    border-bottom-right-radius: 20px;
+}
+
+
+/* Search input field */
+
+.search-input {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid #dcdcdc;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-top: 30px;
+    padding-left: 40px;
+    /* Adjust this value to move the text more to the right */
+}
+
+
+/* Styling for search results */
+
+.search-results {
+    margin-top: 20px;
+}
+
+
+/* Styling for each search result */
+
+.search-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Hover effect on search items */
+
+.search-item:hover {
+    background-color: #f4f7fb;
+    border-radius: 10px;
+}
+
+
+/* Avatar for search result */
+
+.avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* Information section of the search result */
+
+.info {
+    margin-left: 15px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.info p {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.notifications-panel h3 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 60px;
+    margin-top: 10px;
+}
+
+.search-panel button.mat-icon-button {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    transform: translateY(-50%);
+}
+
+
+/* Clear Button */
+
+.clear-btn {
+    position: absolute;
+    right: 20px;
+    top: 110px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.clear-btn img {
+    width: 18px;
+    height: 18px;
+}
+
+.search-btn {
+    position: absolute;
+    left: 20px;
+    top: 109px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.search-btn img {
+    width: 18px;
+    height: 18px;
+}

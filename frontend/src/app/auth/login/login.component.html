@@ -1,0 +1,30 @@
+<div class="login-container">
+    <div class="login-form">
+        <!-- Logo instead of Login Form text -->
+        <div class="logo-container">
+            <img src="../../../assets/logo.svg" alt="Logo" class="logo">
+        </div>
+
+        <form [formGroup]="loginForm">
+            <mat-form-field class="input-field" appearance="fill">
+                <mat-label>Username</mat-label>
+                <input matInput formControlName="username" />
+            </mat-form-field>
+
+            <mat-form-field class="input-field" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" />
+            </mat-form-field>
+
+            <div class="buttons">
+                <button [disabled]="loginForm.invalid" (click)="submit()" mat-raised-button color="primary">
+                    Login
+                </button>
+                <div class="signup-link">
+                    <p>Don't have an account? <a routerLink="/register">Signup</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

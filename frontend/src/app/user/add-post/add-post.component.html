@@ -1,0 +1,36 @@
+<div class="create-post-wrapper">
+
+
+
+    <button class="profile-btn1" [routerLink]="['/profile']">Back</button>
+    <h2>New post</h2>
+    <form [formGroup]="postForm">
+
+        <div class="post-image">
+            <img class="post-image" [src]=" previewImgURL || 'assets/profile-svgrepo-com.svg'" alt="post image">
+        </div>
+
+
+        <input type="file" style="display: none" #fileInput (change)="onFileSelected($event)">
+
+        <button mat-button (click)="fileInput.click()" class="selectFile">Select</button>
+
+        <mat-form-field class="w-100 custom-input" appearance="outline">
+            <mat-label class="description">Add a signature...</mat-label>
+            <textarea matInput formControlName="body" rows="1"></textarea>
+        </mat-form-field>
+
+
+        <div>
+
+            <button class="profile-btn" [disabled]="postForm.invalid" (click)="submit()">
+        Share
+      </button>
+
+        </div>
+
+    </form>
+
+
+
+</div>

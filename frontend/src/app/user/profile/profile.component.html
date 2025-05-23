@@ -1,0 +1,43 @@
+<div *ngIf="isUserDataLoaded" class="user-profile">
+    <div class="profile-header">
+        <!-- Profile Image Section -->
+        <div class="profile-image">
+            <img [src]="user.profile_pic || previewImgURL || 'assets/profile-svgrepo-com.svg'" alt="user image" />
+        </div>
+
+
+
+
+
+        <!-- User Info Section -->
+        <div class="user-info">
+            <h2>{{ user.username }}</h2>
+            <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+            <p>{{ user.bio }}</p>
+        </div>
+
+        <!-- Profile Buttons Section -->
+        <div class="profile-btns">
+            <button class="profile-btn1" (click)="openEditDialog()">Edit profile</button>
+            <button class="profile-btn2" (click)="openFriendDialog()">Friends</button>
+        </div>
+    </div>
+    <input type="file" style="display: none" #fileInput (change)="onFileSelected($event)">
+    <div class="file-upload-buttons">
+        <button mat-button (click)="fileInput.click()">New fhoto</button>
+        <button mat-button *ngIf="selectedFile" (click)="onUpload()">Upload</button>
+    </div>
+
+
+
+    <hr class="center-line">
+
+
+
+
+
+
+
+    <!-- Router outlet for additional sections -->
+    <router-outlet></router-outlet>
+</div>

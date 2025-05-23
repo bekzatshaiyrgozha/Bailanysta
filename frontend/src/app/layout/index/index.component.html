@@ -1,0 +1,73 @@
+<div class="index-page">
+    <div class="search-container">
+        <img src="../../../assets/find.svg" alt="Find icon" class="search-icon-left" />
+
+        <input type="text" [(ngModel)]="searchQuery" (input)="onSearchChange()" placeholder="Search a post..." class="search-input" />
+
+        <button *ngIf="searchQuery" class="clear-button" (click)="clearSearch()">
+          <img src="../../../assets/clear.svg" alt="Clear icon" />
+        </button>
+    </div>
+
+    <ng-container *ngIf="isUserDataLoaded; else skeletonLoading">
+        <mat-card class="post-card" *ngFor="let post of filteredPosts; let i = index">
+
+            <h2 [routerLink]="['/users', post.user]">{{post.user}}</h2>
+
+            <div class="image">
+                <img mat-card-image [src]="post.image" alt="post image" />
+            </div>
+
+            <mat-card-content>
+                <a [routerLink]="['/users', post.user]" class="user-link">{{ post.user }}</a> {{ post.body }}
+            </mat-card-content>
+
+
+            <mat-card-actions class="post-actions">
+                <div class="like-comment">
+                    <div class="like-section" (click)="likePost(i)">
+                        <mat-icon [ngClass]="{'liked': post.userLiked.includes(user.username)}">favorite</mat-icon>
+
+                        <span class="likes-count">{{post.userLiked.length}}</span>
+                        <span>"Likes"</span>
+                    </div>
+                    <!-- Replace "Show Comments" with the comment SVG icon -->
+                    <button class="comment-toggle" (click)="toggleComments(i)">
+                        <img src="../../../assets/comment.svg" alt="Comment" class="comment-icon" />
+                    </button>
+                </div>
+            </mat-card-actions>
+
+            <hr />
+
+            <div class="comments-section" [ngClass]="{'open': post.showComments}">
+                <div *ngFor="let comment of post.comments">
+                    <div class="comment">
+                        <span class="comment-user">{{comment.user}}:</span>
+                        <span class="comment-body">{{comment.body}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <mat-form-field class="w-100">
+                <mat-label class="custom-label">Add a comment...</mat-label>
+                <input (keyup.enter)="postComment(message, i)" [(ngModel)]="message" matInput maxlength="128" />
+
+            </mat-form-field>
+        </mat-card>
+    </ng-container>
+
+    <ng-template #skeletonLoading>
+        <mat-card class="post-card skeleton" *ngFor="let item of skeletonArray">
+            <div class="skeleton-title"></div>
+            <div class="skeleton-image"></div>
+            <div class="skeleton-text"></div>
+        </mat-card>
+    </ng-template>
+
+    <div #marker></div>
+
+    <div *ngIf="isLoading && isUserDataLoaded" class="loader-container">
+        <div class="loader"></div>
+    </div>
+</div>

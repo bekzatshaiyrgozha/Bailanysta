@@ -1,0 +1,214 @@
+.create-post-wrapper {
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 15px;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 540px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.profile-btn {
+    background-color: rgb(21, 18, 18);
+    color: #fffdfd;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 10px;
+    width: 90px;
+    margin-left: 350px;
+}
+
+.profile-btn:hover {
+    background-color: rgb(0, 0, 0);
+}
+
+.profile-btn1 {
+    background-color: rgb(21, 18, 18);
+    color: #fffdfd;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 10px;
+    width: 70px;
+    margin-left: 360px;
+}
+
+.profile-btn1:hover {
+    background-color: rgb(0, 0, 0);
+}
+
+.post-image {
+    display: block;
+    margin: 0px auto;
+    width: 220px;
+    height: 220px;
+    border-radius: 15px;
+    background-color: #e0e0e0;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.file-upload-btn {
+    display: block;
+    margin: 20px auto;
+    background-color: #fff;
+    color: #1e1679;
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: 1px solid #1e1679;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.file-upload-btn:hover {
+    background-color: #f2f2f2;
+    transform: translateY(-2px);
+}
+
+mat-form-field.w-100 {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+textarea.mat-input-element {
+    font-size: 16px;
+    border-radius: 12px;
+    padding: 16px;
+    border: 2px solid #ddd;
+    /* Adding a border */
+    background-color: #f9f9f9;
+    font-family: 'Montserrat', sans-serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow for extra depth */
+}
+
+textarea.mat-input-element:focus {
+    border-color: #1e1679;
+    /* Change border color on focus */
+    outline: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Slight shadow on focus */
+}
+
+textarea.mat-input-element::placeholder {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #aaa;
+}
+
+textarea.mat-input-element:focus::placeholder {
+    color: #1e1679;
+    /* Change placeholder color on focus */
+}
+
+.ai-post {
+    display: flex;
+    gap: 10px;
+    margin-top: 1.5rem;
+    align-items: center;
+}
+
+.prompt-input {
+    flex: 1;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 10px;
+    border: 1px solid #2b1569;
+    outline: none;
+}
+
+.ai-post button {
+    background-color: #111860;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ai-post button:hover {
+    background-color: #1c155f;
+    transform: translateY(-2px);
+}
+
+.selectFile {
+    color: rgb(0, 0, 0);
+    /* Black text */
+    border: none;
+    /* No border */
+    border-radius: 10px;
+    /* Rounded corners */
+    height: 35px;
+    /* Button size */
+    font-size: 13px;
+    /* Smaller font size */
+    cursor: pointer;
+    /* Smooth transitions */
+    font-weight: 600;
+    margin-left: 180px;
+}
+
+.selectFile:hover {
+    background-color: rgb(239, 239, 239);
+}
+
+.custom-input .mat-form-field {
+    width: 100%;
+    /* Сыртқы шекараның түсін өзгерту */
+    border-color: #3498db;
+}
+
+.custom-input .mat-form-field-appearance-outline .mat-form-field-outline {
+    /* Шекараның түсін өзгерту */
+    border-color: #2980b9;
+}
+
+.custom-input .mat-form-field-label {
+    /* Мәтіннің түсін өзгерту */
+    color: #2980b9;
+}
+
+.custom-input .mat-input-element {
+    /* Текст аумағының түсін өзгерту */
+    color: #2c3e50;
+    font-size: 16px;
+}
+
+.custom-input textarea {
+    /* Текст аумағының фонын өзгерту */
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+
+/* Focus кезінде шекараның түсін өзгерту */
+
+.custom-input .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    border-color: #2980b9;
+}

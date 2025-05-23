@@ -1,0 +1,20 @@
+<div *ngIf="friends.length; else no_friends" class="friends-container">
+    <div *ngFor="let friend of friends" class="friend-card">
+
+        <div class="friend-avatar">
+            <img *ngIf="friend.profile_pic; else defaultAvatar" [src]="'http://127.0.0.1:8000/' + friend.profile_pic" alt="avatar" />
+            <ng-template #defaultAvatar>
+                <img src="../../assets/profile.jpg" alt="avatar" />
+            </ng-template>
+        </div>
+
+        <div class="friend-info">
+            <p (click)="closeModal()" [routerLink]="['/users', friend.username]">{{friend.username}}</p>
+        </div>
+
+    </div>
+</div>
+
+<ng-template #no_friends>
+    No friends
+</ng-template>

@@ -1,0 +1,294 @@
+/* Post Section Layout: 3 Posts per Row */
+
+.user-profile {
+    width: 100%;
+    max-width: 1500px;
+}
+
+.post-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.post-card {
+    width: 32%;
+    /* Adjust to have three posts per row */
+    padding: 5px;
+    background-color: #fff;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Image Styling inside Post */
+
+.profile-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+    /* Make all images the same size */
+    border-radius: 4px;
+}
+
+
+/* Adjust Image in Post Card */
+
+.mat-mdc-card .image {
+    overflow: hidden;
+    width: 100%;
+    height: 250px;
+    /* Consistent height for all images */
+    margin-bottom: 15px;
+}
+
+.mat-mdc-card .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+/* Card Actions (like and comments) */
+
+.mdc-card__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.mdc-card__actions p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.mdc-card__actions button {
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 1px solid #000000;
+    color: #000000;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.mdc-card__actions button:hover {
+    background-color: #000000;
+    color: white;
+}
+
+
+/* Comment Button (toggle comments visibility) */
+
+.comment-toggle {
+    background-color: transparent;
+    color: #000000;
+    border: none;
+    padding: 0px 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.comment-toggle:hover {
+    transform: scale(1.05);
+}
+
+
+/* Profile Image Styling */
+
+.profile-image {
+    width: 100%;
+    margin: 0 auto;
+    height: 250px;
+    /* Consistent height for all profile images */
+    border-radius: 0px;
+}
+
+
+/* Card Styling */
+
+.mat-mdc-card {
+    padding: 30px 40px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.2s ease;
+}
+
+.mat-mdc-card:hover {
+    transform: translateY(-1px);
+}
+
+
+/* Post Card Background */
+
+.post-card {
+    background: var(--card-bg);
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    box-shadow: none;
+}
+
+
+/* Avatar Styles */
+
+.avatar {
+    overflow: hidden;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.avatar img {
+    object-fit: cover;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+
+/* Profile Bio Styling */
+
+::ng-deep .user-profile p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: var(--text-color);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+h2 {
+    font-size: 16px;
+    margin-left: 500px;
+    margin-top: -30px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+
+/* Icon Styling */
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: auto;
+}
+
+
+/* Profile Button Styling */
+
+.profile-btn {
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: rgb(239, 239, 239);
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: 860px;
+    font-weight: bold;
+}
+
+.edit-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    /* Space between icon and text */
+    vertical-align: middle;
+    /* Center the icon vertically */
+}
+
+
+/* Button Hover Effect */
+
+.profile-btn:hover {
+    background-color: rgb(219, 219, 219);
+}
+
+
+/* Edit Button Styling */
+
+.mat-mdc-card-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 10px;
+    background-color: transparent;
+    color: #000000;
+    cursor: pointer;
+}
+
+
+/* Post Card Background */
+
+.post-card {
+    background: var(--card-bg);
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    box-shadow: none;
+}
+
+.profile-btn.edit-btn {
+    background: transparent;
+    color: #000000;
+    border: none;
+    padding: 15px 15px;
+    cursor: pointer;
+    border-radius: 100px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    margin-left: -20px;
+}
+
+
+/* Comment Section Styling */
+
+.comment-section {
+    display: none;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.comment-section.show {
+    display: block;
+}
+
+
+/* Adjusting the layout for mobile view */
+
+@media (max-width: 768px) {
+    .post-card {
+        width: 48%;
+        /* 2 cards per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .post-card {
+        width: 100%;
+        /* 1 card per row on small screens */
+    }
+}
+
+.like-count {
+    margin-right: auto;
+    /* Солға итереді */
+    font-size: 14px;
+    color: #555;
+}

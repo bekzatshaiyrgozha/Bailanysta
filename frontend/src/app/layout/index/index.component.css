@@ -1,0 +1,515 @@
+body.dark-theme {
+    --bg-color: #21154f;
+    --text-color: #ffffff;
+    --card-bg: #1a1866;
+}
+
+body {
+    margin: 0;
+    /* Reset body margin */
+    padding: 0;
+    /* Reset body padding */
+}
+
+
+/* Main Page Layout */
+
+.index-page {
+    display: block;
+    width: 100%;
+    background-color: white;
+    margin: 0;
+    /* Remove unwanted margins that could cause the gap */
+    padding: 0;
+}
+
+
+/* Card Styles */
+
+.post-card,
+.mat-mdc-card {
+    margin: 2rem auto;
+    width: 600px;
+    box-shadow: none;
+}
+
+
+/* Image Styles */
+
+.image {
+    width: 100%;
+    height: 600px;
+    margin-bottom: 20px;
+}
+
+.image img,
+img.mat-mdc-card-image.mdc-card__media {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Title Styles */
+
+h2 {
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+
+/* Content Styling */
+
+.post-card p {
+    font-size: 12px;
+}
+
+
+/* Like Section Styles */
+
+.like-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.like-section mat-icon {
+    font-size: 22px;
+    transition: transform 0.2s ease;
+}
+
+.liked {
+    color: red;
+    transform: scale(1.2);
+    /* Slight zoom effect */
+}
+
+.likes-count {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+/* Avatar Styles */
+
+.avatar {
+    width: 80px;
+    height: 80px;
+}
+
+.avatar img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Comment Section Styles */
+
+.comments-section {
+    margin-top: 20px;
+    padding-left: 15px;
+}
+
+.comment {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.comment:hover {
+    background-color: #f4f7fb;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+
+/* Comment User Styling */
+
+.comment-user {
+    font-weight: 600;
+    color: var(--highlight-color);
+}
+
+.comment-body {
+    margin-left: 10px;
+}
+
+
+/* Comment Input Field */
+
+.mat-form-field {
+    margin-top: 20px;
+}
+
+
+/* Skeleton Loading Styles */
+
+.skeleton {
+    padding: 2rem;
+    margin: 2rem 0;
+    animation: pulse 1.5s infinite;
+}
+
+.skeleton-title {
+    width: 50%;
+    height: 20px;
+    margin-bottom: 1rem;
+}
+
+.skeleton-image {
+    width: 100%;
+    height: 250px;
+    background-color: #1b186c;
+    margin-bottom: 1rem;
+}
+
+.skeleton-text {
+    width: 80%;
+    height: 14px;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: #26137c;
+    }
+    50% {
+        background-color: #1b0f6a;
+    }
+    100% {
+        background-color: #342588;
+    }
+}
+
+
+/* Loader Animation */
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Пост картаның негізгі стилі */
+
+
+/* Пост картасының жоғарыдан келу анимациясы */
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.post-card h2:hover {
+    color: var(--highlight-color);
+}
+
+
+/* Пост картасын фокусқа алу кезінде қосымша көлеңке */
+
+
+/* Посттың ховер эффектісіне байланысты өзгерістер */
+
+.post-card .like-section {
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+
+/* Ховер кезінде liked секциясы */
+
+.like-section:hover {
+    color: #e74c3c;
+    transform: scale(1.1);
+    /* Жеңіл үлкейту */
+}
+
+
+/* Search Input Styling */
+
+
+/* Search container style */
+
+.search-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 1rem auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    /* Ensure no extra space around the search input */
+}
+
+
+/* Input field style */
+
+.search-input {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid #dcdcdc;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Placeholder text style */
+
+.search-input::placeholder {
+    color: rgb(112, 119, 132);
+    font-weight: 400;
+}
+
+
+/* Focused input field style */
+
+.search-input:focus {
+    border-color: #3a3a3a;
+    box-shadow: 0 0 10px rgba(58, 58, 58, 0.3);
+    background-color: #ffffff;
+}
+
+
+/* Optional, add a slight padding around the container */
+
+
+/* Посттың тақырыбы - Адам аты */
+
+.post-card h2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 10px 20px;
+    position: relative;
+}
+
+
+/* Адамның атының соңындағы іконканы (avatar) арнайы стильдеу */
+
+.post-card h2 .avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+.like-comment {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+
+/* Лайк бөлімінің стилі */
+
+.like-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: transform 0.3s ease;
+}
+
+.like-section mat-icon {
+    font-size: 22px;
+}
+
+.likes-count {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+
+/* Комментарийлерді көрсету үшін батырма */
+
+.comment-toggle:hover {
+    transform: scale(1.1);
+}
+
+
+/* Комментарийлердің көрсету анимациясы */
+
+.comments-section {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.3s ease;
+    padding-left: 10px;
+    margin-top: 5px;
+}
+
+.comments-section.open {
+    max-height: 500px;
+    padding-top: 10px;
+}
+
+
+/* Комментарийлердің стилі */
+
+.comment {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #333;
+    padding-left: 5px;
+}
+
+.comment-user {
+    font-weight: 600;
+    color: #000000;
+}
+
+.comment-body {
+    margin-left: 10px;
+}
+
+
+/* Комментарий жазу өрісі */
+
+
+/* Суреттің эффекті */
+
+.image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Анимация */
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.comment-toggle {
+    background-color: transparent;
+    color: #000000;
+    border: none;
+    padding: 0px 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.comment-toggle:hover {
+    color: #e74c3c;
+    /* Change color on hover */
+    transform: scale(1.1);
+    /* Slight zoom effect */
+}
+
+.comment-icon {
+    width: 20px;
+    height: 20px;
+    fill: #3498db;
+    /* Blue color for the icon */
+    transition: transform 0.3s ease;
+}
+
+.comment-toggle:hover .comment-icon {
+    transform: scale(1.1);
+    fill: #e74c3c;
+    /* Change icon color on hover */
+}
+
+.user-link {
+    color: #000000;
+    /* Көк түсті сілтеме */
+    text-decoration: none;
+    /* Асты сызылмауы */
+    font-weight: bold;
+    /* Жуан қаріп */
+    cursor: pointer;
+    /* Көрсеткі көрсеткіші */
+    margin-left: -10px;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon-left {
+    position: absolute;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    /* чтобы не мешала кликам */
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 35px 8px 40px;
+    /* отступ слева для иконки, справа для кнопки */
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.clear-button {
+    position: absolute;
+    right: 10px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.clear-button img {
+    width: 18px;
+    height: 18px;
+}

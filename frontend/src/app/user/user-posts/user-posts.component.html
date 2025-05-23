@@ -1,0 +1,53 @@
+<div *ngIf="isUserPostsLoaded" class="user-profile">
+    <div>
+        <button class="profile-btn" routerLink="/profile/add">
+            <img src="../../assets/new.svg" alt="New Post" class="icon">
+            New Post
+        </button>
+    </div>
+    <h2>{{posts.length}} publications</h2>
+
+    <div class="post-cards">
+        <mat-card class="post-card" *ngFor="let post of posts; let i = index">
+            <mat-card-header style="text-align: left; display: flex; justify-content: flex-start; align-items: center;">
+                <button (click)="updatePost(post)" class="profile-btn edit-btn">
+                    <img src="../../assets/edit-3-svgrepo-com.svg" alt="Edit Icon" class="edit-icon">
+                    Edit
+                </button>
+            </mat-card-header>
+
+            <div class="profile-image">
+                <img mat-card-image [src]="post.image" alt="post image">
+            </div>
+
+            <mat-card-content>
+                <p>{{post.body}}</p>
+            </mat-card-content>
+
+            <hr>
+
+            <div style="text-align: left">
+                <button class="comment-toggle" (click)="toggleComments(i)">
+                    <mat-icon>comment</mat-icon> Comments
+                </button>
+
+                <!-- Comment Section -->
+                <div class="comment-section" [ngClass]="{'show': post.showComments}">
+                    <p class="comment-text" *ngFor="let comment of post.comments; let c = index">
+                        <span style="font-weight: 500">{{comment.user}}</span>: {{comment.body}}
+                        <button color="accent" mat-button (click)="deleteComment(comment.id, i, c)">
+                            
+                        </button>
+                    </p>
+                </div>
+            </div>
+
+            <mat-card-actions align="end">
+                <mat-card-subtitle align="start" class="like-count">Likes: {{post.userLiked.length}}</mat-card-subtitle>
+                <button color="warn" mat-button (click)="removePost(post, i)">
+                    Remove Post
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
