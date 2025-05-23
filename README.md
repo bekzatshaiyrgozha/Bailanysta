@@ -87,7 +87,5 @@ ng serve
 http://localhost:4200
 ```
 
-Теперь вы можете начать использовать приложение!
 
-link: https://youtu.be/vqnQWrbz284?si=sPY6Y0c1OUz0fGN4
-# Bailanysta
+
